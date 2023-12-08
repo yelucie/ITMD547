@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload PDF</title>
+    <style>
+        body {
+            font-family: Calibri, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: linear-gradient(319deg, #ebf9ff, #3c5487ad);
+        }
+
+        h2 {
+            color: #3b5998;
+            font-size: 40px;
+        }
+
+        #form {
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+            padding: 20px;
+            margin: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-color: #3498db;
+            border-radius: 20px;
+            background-color: #ffffff;
+        }
+
+        #error {
+            margin: 0;
+            padding-top: 10px;
+            color: rgb(253, 50, 50);
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #3b5998;
+            color: white;
+        }
+
+        button:hover {
+            background-color: #17284d;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Upload your PDF</h2>
+    <form id="form" action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".pdf" required>
+        <br>
+        <button type="submit">Submit</button>
+        <p id="error">{{ error }}</p>
+    </form>
+</body>
+
+</html>
